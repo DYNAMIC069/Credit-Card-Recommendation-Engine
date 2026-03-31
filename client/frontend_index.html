@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CC-RECO — India Credit Card Finder</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:#F7F6F1; --surface:#FFFFFF; --ink:#1A1A18; --dim:#6B6B66;
+  --faint:#E8E7E0; --line:#D8D7CF; --acc:#2D5BE3; --acc-bg:#EEF2FD;
+  --green:#1B6B3A; --green-bg:#EAF3EE; --amber:#8A5200; --amber-bg:#FDF3E0;
+  --mono:'Courier New',Courier,monospace;
+  --serif:Georgia,'Times New Roman',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+  --r:10px; --r-sm:6px;
+}
+html{font-size:15px;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;min-height:100vh}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+header{padding:28px 0 0}
+.hdr-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+.brand{display:flex;flex-direction:column;gap:4px}
+.wordmark{font-family:var(--mono);font-size:1.35rem;font-weight:700;color:var(--ink);letter-spacing:-0.5px}
+.wordmark em{color:var(--acc);font-style:normal}
+.sub{font-size:.72rem;color:var(--dim);letter-spacing:1.5px;text-transform:uppercase}
+.hdr-stats{display:flex;gap:20px}
+.hstat{text-align:right}
+.hstat-n{font-family:var(--mono);font-size:1.1rem;font-weight:700;color:var(--ink)}
+.hstat-l{font-size:.65rem;color:var(--dim);text-transform:uppercase;letter-spacing:1px}
+.tabs{display:flex;gap:0;margin-top:24px;border-bottom:1.5px solid var(--line)}
+.tab{padding:10px 18px;font-size:.8rem;font-weight:500;cursor:pointer;background:none;border:none;color:var(--dim);border-bottom:2px solid transparent;margin-bottom:-1.5px;transition:color .15s,border-color .15s;white-space:nowrap}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--acc);border-bottom-color:var(--acc);font-weight:600}
+.page{display:none;padding:36px 0 80px}
+.page.on{display:block}
+.section-label{font-size:.68rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+@media(max-width:560px){.form-grid{grid-template-columns:1fr}}
+.field{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;transition:border-color .15s}
+.field:focus-within{border-color:var(--acc)}
+.field label{display:block;font-size:.68rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+.field select{width:100%;background:none;border:none;outline:none;font-family:var(--sans);font-size:.95rem;color:var(--ink);cursor:pointer;appearance:none;-webkit-appearance:none}
+.select-wrap{position:relative}
+.select-wrap::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);border:4px solid transparent;border-top:5px solid var(--dim);margin-top:3px;pointer-events:none}
+.field input[type=range]{width:100%;margin-top:4px;accent-color:var(--acc);border:none;background:none;outline:none;cursor:pointer}
+.range-display{font-family:var(--mono);font-size:1.05rem;font-weight:700;color:var(--acc);margin-top:6px}
+.run-row{display:flex;align-items:center;gap:14px}
+.btn-run{background:var(--acc);color:#fff;border:none;padding:11px 28px;border-radius:var(--r-sm);font-size:.85rem;font-weight:600;cursor:pointer;transition:opacity .15s,transform .1s;display:flex;align-items:center;gap:8px}
+.btn-run:hover{opacity:.88}
+.btn-run:active{transform:scale(.98)}
+.btn-run:disabled{opacity:.45;cursor:not-allowed}
+.status{font-size:.75rem;color:var(--dim)}
+.dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--line);vertical-align:middle;margin-right:5px}
+.dot.live{background:var(--green)}
+.results-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.results-label{font-size:.72rem;font-weight:600;color:var(--dim);letter-spacing:1.5px;text-transform:uppercase}
+.mode-badge{font-size:.68rem;padding:3px 9px;border-radius:50px;font-weight:600;letter-spacing:.5px}
+.mode-badge.live{background:var(--green-bg);color:var(--green)}
+.mode-badge.static{background:var(--amber-bg);color:var(--amber)}
+.card-list{display:flex;flex-direction:column;gap:10px}
+.cc-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:grid;grid-template-columns:52px 1fr auto;transition:border-color .15s,box-shadow .15s}
+.cc-card:hover{border-color:#aaaaee;box-shadow:0 2px 12px rgba(45,91,227,.07)}
+.cc-card.top-pick{border-color:var(--acc)}
+.cc-rank{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:18px 0 0;border-right:1px solid var(--faint);color:var(--dim);font-size:.72rem;font-family:var(--mono);font-weight:700}
+.cc-rank .rank-num{font-size:1rem;color:var(--ink)}
+.top-star{color:var(--acc);font-size:.85rem;margin-top:2px}
+.cc-body{padding:16px 18px;min-width:0}
+.cc-bank{font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-bottom:3px}
+.cc-name{font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.3}
+.tag-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.tag{font-size:.65rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;padding:3px 8px;border-radius:50px;background:var(--faint);color:var(--dim)}
+.tag.t-free{background:var(--green-bg);color:var(--green)}
+.tag.t-lounge{background:var(--acc-bg);color:var(--acc)}
+.tag.t-cashback{background:var(--amber-bg);color:var(--amber)}
+.tag.t-forex{background:#F0F9FF;color:#0369A1}
+.cc-reason{font-size:.78rem;color:var(--dim);border-left:2px solid var(--faint);padding-left:10px;line-height:1.5}
+.cc-meta{border-left:1px solid var(--faint);padding:16px 18px;display:flex;flex-direction:column;justify-content:space-between;gap:12px;min-width:120px;text-align:right}
+.meta-fee small{font-size:.64rem;color:var(--dim);display:block;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px}
+.meta-fee strong{font-size:.95rem;font-weight:700}
+.meta-fee strong.free{color:var(--green)}
+.meta-rate small{font-size:.64rem;color:var(--dim);display:block;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px}
+.meta-rate strong{font-size:1.4rem;font-weight:700;font-family:var(--mono);color:var(--ink);line-height:1}
+.meta-score{font-size:.7rem;color:var(--dim)}
+.meta-score strong{color:var(--acc);font-weight:700}
+.score-bar{width:100%;height:3px;background:var(--faint);border-radius:2px;margin-top:4px;overflow:hidden}
+.score-fill{height:100%;background:var(--acc);border-radius:2px;transition:width .8s cubic-bezier(.4,0,.2,1)}
+@media(max-width:500px){.cc-card{grid-template-columns:40px 1fr}.cc-meta{display:none}}
+.exp-controls{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:20px}
+@media(max-width:580px){.exp-controls{grid-template-columns:1fr 1fr}}
+.exp-search{grid-column:1/-1}
+.ctrl-input{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:9px 12px;font-family:var(--sans);font-size:.85rem;color:var(--ink);width:100%;outline:none;appearance:none;-webkit-appearance:none;transition:border-color .15s}
+.ctrl-input:focus{border-color:var(--acc)}
+select.ctrl-input{cursor:pointer}
+.exp-count{font-size:.72rem;color:var(--dim);margin-bottom:12px;letter-spacing:.5px}
+.exp-grid{display:flex;flex-direction:column;gap:8px}
+.exp-row{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:12px 16px;display:grid;grid-template-columns:1fr 90px 80px 70px 55px 55px;align-items:center;gap:12px;transition:border-color .15s}
+.exp-row:hover{border-color:#aaaaee}
+.er-name{font-size:.9rem;font-weight:600}
+.er-bank{font-size:.68rem;color:var(--dim);margin-top:2px;letter-spacing:.5px}
+.er-val{font-size:.82rem;text-align:right}
+.er-val.green{color:var(--green);font-weight:700}
+.er-val.blue{color:var(--acc);font-weight:700}
+.er-val.dim{color:var(--dim)}
+.exp-thead{display:grid;grid-template-columns:1fr 90px 80px 70px 55px 55px;gap:12px;padding:6px 16px}
+.exp-thead span{font-size:.64rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);text-align:right}
+.exp-thead span:first-child{text-align:left}
+@media(max-width:640px){.exp-row{grid-template-columns:1fr 80px 65px}.exp-row .ec3,.exp-row .ec4,.exp-row .ec5{display:none}.exp-thead{grid-template-columns:1fr 80px 65px}.exp-thead .eth3,.exp-thead .eth4,.exp-thead .eth5{display:none}}
+.metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:32px}
+@media(max-width:560px){.metrics-grid{grid-template-columns:1fr 1fr}}
+.metric-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.mc-val{font-family:var(--mono);font-size:1.6rem;font-weight:700;color:var(--ink);line-height:1;margin-bottom:4px}
+.mc-label{font-size:.68rem;color:var(--dim);text-transform:uppercase;letter-spacing:1px}
+.model-table{width:100%;border-collapse:collapse;font-size:.82rem;margin-bottom:32px}
+.model-table th{padding:8px 12px;text-align:left;font-size:.65rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);border-bottom:1.5px solid var(--line)}
+.model-table td{padding:11px 12px;border-bottom:1px solid var(--faint)}
+.model-table tr:last-child td{border:none}
+.model-table tr.best td{font-weight:600;background:var(--acc-bg)}
+.td-r{text-align:right;font-family:var(--mono)}
+.stack-table{width:100%;border-collapse:collapse;font-size:.82rem}
+.stack-table td{padding:10px 12px;border-bottom:1px solid var(--faint)}
+.stack-table td:first-child{width:140px;font-size:.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim)}
+.stack-table tr:last-child td{border:none}
+.code-box{background:#1E1E2E;color:#CDD6F4;font-family:var(--mono);font-size:.78rem;border-radius:var(--r);padding:18px 20px;line-height:1.9;overflow-x:auto;margin-bottom:24px}
+.cmt{color:#6C7086}.str{color:#A6E3A1}.kw{color:#CBA6F7}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle}
+.offline-banner{background:var(--amber-bg);border:1px solid #E5B55A;border-radius:var(--r-sm);padding:10px 14px;font-size:.78rem;color:var(--amber);margin-bottom:20px;display:none}
+.offline-banner.show{display:block}
+.offline-banner code{font-family:var(--mono);font-size:.75rem;background:rgba(0,0,0,.06);padding:1px 5px;border-radius:3px}
+footer{border-top:1px solid var(--line);padding:20px 0;font-size:.7rem;color:var(--dim);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="hdr-inner">
+    <div class="brand">
+      <div class="wordmark">CC<em>&#8212;</em>RECO</div>
+      <div class="sub">India Credit Card Recommender</div>
+    </div>
+    <div class="hdr-stats">
+      <div class="hstat"><div class="hstat-n">111</div><div class="hstat-l">Cards</div></div>
+      <div class="hstat"><div class="hstat-n">19</div><div class="hstat-l">Banks</div></div>
+      <div class="hstat"><div class="hstat-n">0.937</div><div class="hstat-l">AUC-ROC</div></div>
+    </div>
+  </div>
+  <div class="tabs">
+    <button class="tab on" onclick="showTab('quiz',this)">Recommend</button>
+    <button class="tab" onclick="showTab('explore',this)">Explorer</button>
+    <button class="tab" onclick="showTab('about',this)">About</button>
+  </div>
+</header>
+
+<div class="page on" id="page-quiz">
+  <div class="offline-banner" id="offline-banner">
+    API offline &mdash; static mode. Start: <code>uvicorn api.main:app --reload --port 8000</code>
+  </div>
+  <div class="section-label">Your spending profile</div>
+  <div class="form-grid">
+    <div class="field">
+      <label>Primary Spend</label>
+      <div class="select-wrap">
+        <select id="f-cat">
+          <option>Shopping</option><option>Travel</option><option>Fuel</option>
+          <option>Food</option><option>Utility</option><option>Health</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label>Preferred Perk</label>
+      <div class="select-wrap">
+        <select id="f-perk">
+          <option>Cashback</option><option>Rewards</option><option>Lounge</option>
+          <option>Zero Fee</option><option>Premium</option><option>Forex</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label>Annual Fee Comfort</label>
+      <div class="select-wrap">
+        <select id="f-fee">
+          <option>Free</option><option>Low (&lt;1500)</option>
+          <option selected>Mid (1.5-5K)</option><option>Premium (5K+)</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label>Monthly Spend</label>
+      <input type="range" id="f-spend" min="5000" max="100000" step="5000" value="20000"
+             oninput="updateSpend(this.value)">
+      <div class="range-display" id="spend-disp">&#8377;20,000 / mo</div>
+    </div>
+  </div>
+  <div class="run-row">
+    <button class="btn-run" id="run-btn" onclick="runQuery()">Run Model</button>
+    <span class="status" id="status-txt"><span class="dot"></span>Ready</span>
+  </div>
+  <div id="results" style="margin-top:36px"></div>
+</div>
+
+<div class="page" id="page-explore">
+  <div class="section-label">Browse all cards</div>
+  <div class="exp-controls">
+    <div class="exp-search"><input class="ctrl-input" type="text" id="q-search" placeholder="Search name, bank, category&#8230;" oninput="renderExplorer()"></div>
+    <select class="ctrl-input" id="q-bank" onchange="renderExplorer()"><option value="">All Banks</option></select>
+    <select class="ctrl-input" id="q-seg" onchange="renderExplorer()">
+      <option value="">All Segments</option><option>Entry</option><option>Entry-Mid</option>
+      <option>Mid</option><option>Mid-Premium</option><option>Premium</option><option>Super Premium</option>
+    </select>
+    <select class="ctrl-input" id="q-type" onchange="renderExplorer()">
+      <option value="">All Types</option><option value="cashback">Cashback</option><option value="points">Points / Miles</option>
+    </select>
+    <select class="ctrl-input" id="q-lounge" onchange="renderExplorer()">
+      <option value="">Any Lounge</option><option value="dom">Domestic</option><option value="both">Both</option>
+    </select>
+    <select class="ctrl-input" id="q-fee" onchange="renderExplorer()">
+      <option value="">Any Fee</option><option value="0">Free Only</option>
+      <option value="500">Under &#8377;500</option><option value="2000">Under &#8377;2,000</option><option value="5000">Under &#8377;5,000</option>
+    </select>
+  </div>
+  <div class="exp-count" id="exp-count"></div>
+  <div class="exp-thead">
+    <span>Card</span><span>Annual Fee</span><span>Best Rate</span>
+    <span class="eth3">Segment</span><span class="eth4">Lounge</span><span class="eth5">Rating</span>
+  </div>
+  <div class="exp-grid" id="exp-grid"></div>
+</div>
+
+<div class="page" id="page-about">
+  <div class="section-label">Model performance</div>
+  <div class="metrics-grid">
+    <div class="metric-card"><div class="mc-val">111</div><div class="mc-label">Cards in dataset</div></div>
+    <div class="metric-card"><div class="mc-val">99K</div><div class="mc-label">Training interactions</div></div>
+    <div class="metric-card"><div class="mc-val">0.937</div><div class="mc-label">AUC-ROC (RF)</div></div>
+    <div class="metric-card"><div class="mc-val">0.877</div><div class="mc-label">NDCG@5</div></div>
+  </div>
+  <div class="section-label">Model comparison</div>
+  <table class="model-table">
+    <thead><tr><th>Model</th><th class="td-r">Accuracy</th><th class="td-r">Precision</th><th class="td-r">Recall</th><th class="td-r">F1</th><th class="td-r">AUC-ROC</th></tr></thead>
+    <tbody>
+      <tr><td>Logistic Regression</td><td class="td-r">75.1%</td><td class="td-r">11.1%</td><td class="td-r">64.9%</td><td class="td-r">19.0%</td><td class="td-r">0.775</td></tr>
+      <tr class="best"><td>Random Forest &#9733;</td><td class="td-r">88.8%</td><td class="td-r">26.3%</td><td class="td-r">81.9%</td><td class="td-r">39.8%</td><td class="td-r">0.937</td></tr>
+      <tr><td>Gradient Boosting</td><td class="td-r">96.6%</td><td class="td-r">81.2%</td><td class="td-r">30.7%</td><td class="td-r">44.5%</td><td class="td-r">0.951</td></tr>
+    </tbody>
+  </table>
+  <div class="section-label">Tech stack</div>
+  <table class="stack-table" style="margin-bottom:32px">
+    <tr><td>Scraping</td><td>Apify RAG Web Browser &rarr; CardInsider.com</td></tr>
+    <tr><td>Data</td><td>Pandas, NumPy &mdash; 111 cards &times; 25 features</td></tr>
+    <tr><td>ML</td><td>scikit-learn &mdash; Random Forest, Logistic Regression, GBM</td></tr>
+    <tr><td>Validation</td><td>Pydantic v2 &mdash; 10 schema + business rule checks</td></tr>
+    <tr><td>API</td><td>FastAPI + Uvicorn &mdash; 7 endpoints with Swagger docs</td></tr>
+    <tr><td>Frontend</td><td>Vanilla HTML / CSS / JS &mdash; zero dependencies</td></tr>
+  </table>
+  <div class="section-label">API quick start</div>
+  <div class="code-box"><span class="cmt"># 1. Start backend</span>
+uvicorn api.main:app --reload --port 8000
+
+<span class="cmt"># 2. POST /recommend</span>
+curl -X POST http://localhost:8000/recommend \
+  -H <span class="str">"Content-Type: application/json"</span> \
+  -d <span class="str">'{"spend_category":"Shopping","pref_perk":"Cashback","fee_preference":"Mid (1.5-5K)","monthly_spend":25000,"top_n":5}'</span>
+
+<span class="cmt"># 3. Swagger docs</span>
+<span class="kw">open</span> http://localhost:8000/docs</div>
+</div>
+
+<footer>
+  <span>CC-RECO &mdash; India Credit Card Recommender</span>
+  <span>Data: CardInsider via Apify &middot; RF model &middot; AUC 0.937</span>
+</footer>
+</div>
+
+<script>
+const API='http://localhost:8000';
+const CARDS=[
+  {b:"HDFC Bank",n:"Millennia Credit Card",net:"Mastercard",af:1000,rt:"Cashback",br:1,brt:5,bc:"Online Shopping",ld:true,li:false,fx:3.5,seg:"Mid",r:4.8,bf:"Shopping",lf:false},
+  {b:"HDFC Bank",n:"Regalia Gold Credit Card",net:"Mastercard",af:2500,rt:"Reward Points",br:1.73,brt:8.6,bc:"Myntra/Nykaa/M&S",ld:true,li:true,fx:2,seg:"Mid-Premium",r:4.5,bf:"Travel|Shopping",lf:false},
+  {b:"HDFC Bank",n:"Swiggy BLCK Credit Card",net:"Mastercard",af:1000,rt:"Cashback",br:1,brt:10,bc:"Swiggy App",ld:false,li:false,fx:3.5,seg:"Entry",r:4.6,bf:"Food|Dining",lf:false},
+  {b:"HDFC Bank",n:"Tata Neu Infinity Credit Card",net:"RuPay",af:1499,rt:"NeuCoins",br:1.5,brt:10,bc:"Tata Neu App",ld:true,li:true,fx:2,seg:"Mid",r:4.5,bf:"Travel|Shopping",lf:false},
+  {b:"HDFC Bank",n:"INFINIA Metal Credit Card",net:"Mastercard",af:12500,rt:"Reward Points",br:3.33,brt:33.33,bc:"SmartBuy 10X",ld:true,li:true,fx:2,seg:"Super Premium",r:5,bf:"Travel|Dining|Shopping",lf:false},
+  {b:"HDFC Bank",n:"Diners Club Black Metal Edition",net:"Diners",af:10000,rt:"Reward Points",br:3.33,brt:33.33,bc:"SmartBuy 10X",ld:true,li:true,fx:2,seg:"Super Premium",r:4.7,bf:"Travel|Dining|Shopping",lf:false},
+  {b:"HDFC Bank",n:"Diners Club Privilege Card",net:"Diners",af:1000,rt:"Reward Points",br:1.33,brt:6.67,bc:"Swiggy & Zomato",ld:true,li:true,fx:2,seg:"Mid",r:4.5,bf:"Movies|Travel|Food",lf:false},
+  {b:"HDFC Bank",n:"Swiggy HDFC Credit Card",net:"Mastercard",af:500,rt:"Cashback",br:1,brt:10,bc:"Swiggy App",ld:false,li:false,fx:3.5,seg:"Entry",r:4.8,bf:"Food|Dining",lf:false},
+  {b:"HDFC Bank",n:"Pixel Play Credit Card",net:"Mastercard",af:0,rt:"Cashback",br:1,brt:5,bc:"Two chosen categories",ld:false,li:false,fx:3.5,seg:"Entry",r:4.5,bf:"Shopping",lf:true},
+  {b:"HDFC Bank",n:"MoneyBack Plus Credit Card",net:"Mastercard",af:500,rt:"Reward Points",br:2,brt:10,bc:"Flipkart/Amazon/Swiggy",ld:false,li:false,fx:3.5,seg:"Entry",r:4.5,bf:"Shopping",lf:false},
+  {b:"HDFC Bank",n:"IndianOil HDFC Credit Card",net:"Mastercard",af:500,rt:"Fuel Points",br:1,brt:5,bc:"IndianOil outlets",ld:false,li:false,fx:3.5,seg:"Entry",r:4.5,bf:"Fuel",lf:false},
+  {b:"SBI Card",n:"Cashback SBI Credit Card",net:"Mastercard",af:999,rt:"Cashback",br:1,brt:5,bc:"All online spends",ld:false,li:false,fx:3.5,seg:"Entry-Mid",r:4.7,bf:"Shopping|Food",lf:false},
+  {b:"SBI Card",n:"SimplyCLICK Credit Card",net:"Mastercard",af:499,rt:"Reward Points",br:1,brt:10,bc:"Apollo/Swiggy/BookMyShow",ld:false,li:false,fx:3.5,seg:"Entry",r:4.8,bf:"Shopping",lf:false},
+  {b:"SBI Card",n:"Flipkart SBI Credit Card",net:"Mastercard",af:500,rt:"Cashback",br:1,brt:7.5,bc:"Flipkart/Myntra",ld:false,li:false,fx:3.5,seg:"Entry",r:4.8,bf:"Shopping",lf:false},
+  {b:"SBI Card",n:"PhonePe SBI SELECT BLACK",net:"Mastercard",af:1499,rt:"Reward Points",br:1,brt:10,bc:"PhonePe spends",ld:true,li:true,fx:3.5,seg:"Mid",r:4.8,bf:"Shopping|Utility",lf:false},
+  {b:"SBI Card",n:"BPCL SBI Card OCTANE",net:"Mastercard",af:1499,rt:"Reward Points",br:0.25,brt:7.25,bc:"BPCL fuel stations",ld:true,li:false,fx:3.5,seg:"Mid",r:4.7,bf:"Travel|Fuel|Food",lf:false},
+  {b:"SBI Card",n:"SBI Card PULSE",net:"Visa",af:1499,rt:"Reward Points",br:0.5,brt:2.5,bc:"Movies/Dining/Pharmacy",ld:true,li:false,fx:3.5,seg:"Mid",r:4.5,bf:"Health|Shopping",lf:false},
+  {b:"SBI Card",n:"SBI ELITE Credit Card",net:"Mastercard",af:4999,rt:"Reward Points",br:0.5,brt:2.5,bc:"Dining/Grocery",ld:true,li:true,fx:1.99,seg:"Premium",r:4.4,bf:"Movies|Travel|Shopping",lf:false},
+  {b:"SBI Card",n:"SBI AURUM Credit Card",net:"Mastercard",af:9999,rt:"Reward Points",br:1,brt:4,bc:"All eligible spends",ld:true,li:true,fx:1.99,seg:"Super Premium",r:4.2,bf:"Movies|Travel|Dining",lf:false},
+  {b:"SBI Card",n:"KrisFlyer SBI Card Apex",net:"Mastercard",af:9999,rt:"KrisFlyer Miles",br:2,brt:5,bc:"Singapore Airlines",ld:true,li:true,fx:3.5,seg:"Super Premium",r:4.6,bf:"Travel",lf:false},
+  {b:"Axis Bank",n:"Flipkart Axis Bank Credit Card",net:"Visa",af:0,rt:"Cashback",br:1,brt:7.5,bc:"Flipkart/Myntra",ld:false,li:false,fx:3.5,seg:"Entry",r:4.6,bf:"Shopping",lf:true},
+  {b:"Axis Bank",n:"Airtel Axis Bank Credit Card",net:"Visa",af:500,rt:"Cashback",br:1,brt:25,bc:"Airtel recharges",ld:false,li:false,fx:3.5,seg:"Entry",r:4.8,bf:"Utility|Food",lf:false},
+  {b:"Axis Bank",n:"Horizon Credit Card",net:"Mastercard",af:3000,rt:"EDGE Miles",br:2,brt:5,bc:"Travel spends",ld:true,li:true,fx:2,seg:"Mid-Premium",r:4.7,bf:"Travel",lf:false},
+  {b:"Axis Bank",n:"Magnus Credit Card",net:"Mastercard",af:10000,rt:"EDGE Miles",br:3.33,brt:10,bc:"All spends 10X",ld:true,li:true,fx:2,seg:"Super Premium",r:4.8,bf:"Travel|Shopping|Dining",lf:false},
+  {b:"Axis Bank",n:"Ace Credit Card",net:"Visa",af:499,rt:"Cashback",br:1,brt:5,bc:"Google Pay bills",ld:false,li:false,fx:3.5,seg:"Entry",r:4.6,bf:"Utility|Shopping",lf:false},
+  {b:"Axis Bank",n:"Axis Cashback Credit Card",net:"Visa",af:1000,rt:"Cashback",br:0.5,brt:7,bc:"Online purchases",ld:false,li:false,fx:3.5,seg:"Entry-Mid",r:4.5,bf:"Shopping",lf:false},
+  {b:"ICICI Bank",n:"Amazon Pay ICICI Credit Card",net:"Visa",af:0,rt:"Cashback",br:1,brt:5,bc:"Amazon Prime",ld:false,li:false,fx:3.5,seg:"Entry",r:5,bf:"Shopping",lf:true},
+  {b:"ICICI Bank",n:"Emeralde Private Metal Credit Card",net:"Visa",af:12499,rt:"Reward Points",br:3,brt:6,bc:"All eligible spends",ld:true,li:true,fx:2,seg:"Super Premium",r:4.6,bf:"Travel|Shopping",lf:false},
+  {b:"ICICI Bank",n:"Coral Credit Card",net:"Visa",af:500,rt:"Reward Points",br:2,brt:4,bc:"All eligible spends",ld:true,li:false,fx:3.5,seg:"Entry-Mid",r:4.3,bf:"Shopping|Movies",lf:false},
+  {b:"IDFC FIRST Bank",n:"FIRST Classic Credit Card",net:"Visa",af:0,rt:"Reward Points",br:1.5,brt:5,bc:"Spends above 20K/mo",ld:false,li:false,fx:3.5,seg:"Entry",r:4.5,bf:"Shopping|Travel",lf:true},
+  {b:"IDFC FIRST Bank",n:"FIRST Select Credit Card",net:"Visa",af:0,rt:"Reward Points",br:1.5,brt:5,bc:"Spends above 20K/mo",ld:true,li:false,fx:1.5,seg:"Mid",r:4.4,bf:"Travel|Shopping",lf:true},
+  {b:"IDFC FIRST Bank",n:"FIRST Wealth Credit Card",net:"Mastercard",af:0,rt:"Reward Points",br:1.5,brt:5,bc:"Spends above 20K/mo",ld:true,li:true,fx:1.5,seg:"Mid-Premium",r:4.5,bf:"Travel|Shopping",lf:true},
+  {b:"IDFC FIRST Bank",n:"Ashva Metal Credit Card",net:"Mastercard",af:2999,rt:"Reward Points",br:1,brt:6.67,bc:"Spends above 20K (10X)",ld:true,li:true,fx:1,seg:"Premium",r:4.7,bf:"Travel|Shopping",lf:false},
+  {b:"IDFC FIRST Bank",n:"Mayura Credit Card",net:"Mastercard",af:5999,rt:"Reward Points",br:1,brt:6.67,bc:"Spends above 20K (10X)",ld:true,li:true,fx:1,seg:"Super Premium",r:4.8,bf:"Movies|Travel|Shopping",lf:false},
+  {b:"Federal Bank",n:"Scapia Credit Card",net:"Visa",af:0,rt:"Scapia Coins",br:2,brt:20,bc:"Travel bookings",ld:true,li:false,fx:0,seg:"Entry-Mid",r:4.7,bf:"Travel|Shopping",lf:true},
+  {b:"IndusInd Bank",n:"EazyDiner IndusInd Platinum",net:"Mastercard",af:0,rt:"Reward Points",br:2,brt:4,bc:"Dining spends",ld:false,li:false,fx:3.5,seg:"Entry",r:4.5,bf:"Dining|Food",lf:true},
+  {b:"IndusInd Bank",n:"Pinnacle Credit Card",net:"Visa",af:2999,rt:"Reward Points",br:2,brt:6,bc:"All eligible spends",ld:true,li:true,fx:2,seg:"Premium",r:4.4,bf:"Travel|Shopping",lf:false},
+  {b:"AU Small Finance Bank",n:"LIT Credit Card",net:"Visa",af:0,rt:"Reward Points",br:1,brt:10,bc:"Paid categories",ld:true,li:false,fx:3.5,seg:"Entry",r:4.5,bf:"Shopping",lf:true},
+  {b:"AU Small Finance Bank",n:"Xcite Credit Card",net:"Visa",af:4999,rt:"Reward Points",br:3.33,brt:10,bc:"Travel spends",ld:true,li:true,fx:2,seg:"Premium",r:4.5,bf:"Travel|Shopping",lf:false},
+  {b:"American Express",n:"Membership Rewards Credit Card",net:"Amex",af:4500,rt:"Membership Rewards",br:0.5,brt:5,bc:"All spends 5X SmartEarn",ld:false,li:false,fx:3.5,seg:"Mid",r:4.6,bf:"Shopping|Dining",lf:false},
+  {b:"American Express",n:"Platinum Travel Credit Card",net:"Amex",af:5000,rt:"Membership Rewards",br:1,brt:5,bc:"Travel bookings 5X",ld:true,li:false,fx:3.5,seg:"Mid-Premium",r:4.6,bf:"Travel",lf:false},
+  {b:"HSBC Bank",n:"Live+ Credit Card",net:"Visa",af:999,rt:"Cashback",br:1.5,brt:10,bc:"Dining & lifestyle",ld:true,li:false,fx:3.5,seg:"Entry-Mid",r:4.5,bf:"Dining|Food|Shopping",lf:false},
+  {b:"HSBC Bank",n:"Premier Credit Card",net:"Mastercard",af:0,rt:"Reward Points",br:1,brt:5,bc:"All eligible spends",ld:true,li:true,fx:2,seg:"Premium",r:4.4,bf:"Travel|Shopping",lf:true},
+  {b:"Kotak Mahindra Bank",n:"811 Dream Credit Card",net:"Mastercard",af:0,rt:"Reward Points",br:1,brt:2,bc:"All eligible spends",ld:false,li:false,fx:3.5,seg:"Entry",r:4.2,bf:"Shopping",lf:true},
+  {b:"Standard Chartered",n:"Smart Credit Card",net:"Mastercard",af:499,rt:"Cashback",br:1,brt:5,bc:"Online spends",ld:true,li:false,fx:3.5,seg:"Entry",r:4.4,bf:"Shopping",lf:false},
+  {b:"Yes Bank",n:"YES FIRST Exclusive Credit Card",net:"Mastercard",af:9999,rt:"Reward Points",br:3,brt:12,bc:"All eligible spends",ld:true,li:true,fx:1.75,seg:"Super Premium",r:4.5,bf:"Travel|Luxury",lf:false},
+];
+
+function scoreCard(c,cat,perk,fee){
+  let s=0;
+  const bf=c.bf.toLowerCase();
+  if(bf.includes(cat.toLowerCase()))s+=40;
+  else if(cat==='Food'&&(bf.includes('dining')||bf.includes('food')))s+=38;
+  if(perk==='Cashback'&&c.rt.toLowerCase().includes('cashback'))s+=32;
+  if(perk==='Lounge'&&c.ld)s+=(c.li?35:22);
+  if(perk==='Zero Fee'&&c.lf)s+=38;
+  if(perk==='Forex'&&c.fx<=1.5)s+=35;
+  if(perk==='Premium'&&['Premium','Super Premium'].includes(c.seg))s+=28;
+  if(perk==='Rewards'&&!c.rt.toLowerCase().includes('cashback'))s+=24;
+  const feeOk={'Free':c.af===0,'Low (<1500)':c.af<=1500,'Mid (1.5-5K)':c.af<=5000,'Premium (5K+)':true};
+  if(feeOk[fee])s+=18;
+  s+=Math.min(18,c.brt*0.65);
+  s+=(c.r-3)*5;
+  return Math.min(99,Math.round(s));
+}
+function makeReason(c,cat,perk){
+  const p=[];
+  if(c.bf.toLowerCase().includes(cat.toLowerCase()))p.push('Matches '+cat+' spends');
+  if(c.lf)p.push('Lifetime free');
+  if(c.fx<=1.5)p.push(c.fx+'% forex markup');
+  if(c.ld&&c.li)p.push('Dom + intl lounge');
+  else if(c.ld)p.push('Domestic lounge');
+  if(!p.length)p.push('Up to '+c.brt+'% on '+c.bc.split('(')[0].trim());
+  return p.slice(0,2).join(' \u00B7 ');
+}
+function updateSpend(v){document.getElementById('spend-disp').textContent='\u20B9'+Number(v).toLocaleString('en-IN')+' / mo'}
+function showTab(name,btn){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('page-'+name).classList.add('on');
+  if(name==='explore')renderExplorer();
+}
+async function runQuery(){
+  const cat=document.getElementById('f-cat').value;
+  const perk=document.getElementById('f-perk').value;
+  const fee=document.getElementById('f-fee').value;
+  const spend=+document.getElementById('f-spend').value;
+  const btn=document.getElementById('run-btn');
+  btn.disabled=true;
+  btn.innerHTML='<span class="spin"></span> Running\u2026';
+  document.getElementById('status-txt').innerHTML='<span class="dot"></span>Querying\u2026';
+  document.getElementById('results').innerHTML='';
+  const feeMap={'Free':'Free','Low (<1500)':'Low (<1500)','Mid (1.5-5K)':'Mid (1.5-5K)','Premium (5K+)':'Premium (5K+)'};
+  let cards=null,live=false;
+  try{
+    const res=await fetch(API+'/recommend',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({spend_category:cat,pref_perk:perk,fee_preference:feeMap[fee]||'Mid (1.5-5K)',monthly_spend:spend,age:28,top_n:6}),
+      signal:AbortSignal.timeout(4000)});
+    if(res.ok){cards=await res.json();live=true;}
+  }catch(_){}
+  document.getElementById('offline-banner').classList.toggle('show',!live);
+  if(!cards){
+    const scored=CARDS.map(c=>({...c,score:scoreCard(c,cat,perk,fee),rsn:makeReason(c,cat,perk)}));
+    scored.sort((a,b)=>b.score-a.score);
+    cards=scored.slice(0,6).map((c,i)=>({rank:i+1,bank:c.b,name:c.n,annual_fee:c.af,reward_type:c.rt,best_reward_rate:c.brt,best_category:c.bc,lounge_domestic:c.ld,lounge_international:c.li,forex_markup:c.fx,segment:c.seg,rating:c.r,lifetime_free:c.lf,match_score:c.score,reason:c.rsn}));
+  }
+  renderResults(cards,live);
+  btn.disabled=false;btn.innerHTML='Run Model';
+  const sd=live?'<span class="dot live"></span>':'<span class="dot"></span>';
+  document.getElementById('status-txt').innerHTML=sd+(live?'Live API \u00B7 '+cards.length+' results':'Static mode \u00B7 '+cards.length+' results');
+}
+function renderResults(cards,live){
+  const out=document.getElementById('results');
+  const meta=`<div class="results-meta"><div class="results-label">Top matches</div><span class="mode-badge ${live?'live':'static'}">${live?'\u25CF Live API':'\u25CB Static mode'}</span></div>`;
+  const rows=cards.map((c,i)=>{
+    const fee=c.annual_fee===0;
+    const fs=fee?'Free':'\u20B9'+Number(c.annual_fee).toLocaleString('en-IN');
+    const tags=[
+      c.lifetime_free?'<span class="tag t-free">Free</span>':'',
+      c.lounge_domestic?`<span class="tag t-lounge">${c.lounge_international?'Dom+Intl Lounge':'Dom Lounge'}</span>`:'',
+      (c.reward_type||'').toLowerCase().includes('cashback')?'<span class="tag t-cashback">Cashback</span>':'',
+      (c.forex_markup||4)<=1.5?`<span class="tag t-forex">${c.forex_markup}% Forex</span>`:'',
+    ].filter(Boolean).join('');
+    const sc=Math.round(c.match_score||0);
+    return `<div class="cc-card${i===0?' top-pick':''}">
+      <div class="cc-rank"><span class="rank-num">${i+1}</span>${i===0?'<span class="top-star">\u2605</span>':''}</div>
+      <div class="cc-body">
+        <div class="cc-bank">${c.bank}</div>
+        <div class="cc-name">${c.name}</div>
+        <div class="tag-row">${tags||`<span class="tag">${c.segment||''}</span>`}</div>
+        ${c.reason?`<div class="cc-reason">${c.reason}</div>`:''}
+      </div>
+      <div class="cc-meta">
+        <div class="meta-fee"><small>Annual Fee</small><strong class="${fee?'free':''}">${fs}</strong></div>
+        <div class="meta-rate"><small>Best Rate</small><strong>${c.best_reward_rate}%</strong></div>
+        <div class="meta-score">Match <strong>${sc}%</strong><div class="score-bar"><div class="score-fill" style="width:0%" data-w="${sc}%"></div></div></div>
+      </div></div>`;
+  }).join('');
+  out.innerHTML=meta+`<div class="card-list">${rows}</div>`;
+  setTimeout(()=>out.querySelectorAll('.score-fill').forEach(el=>el.style.width=el.dataset.w),50);
+}
+const banks=[...new Set(CARDS.map(c=>c.b))].sort();
+const bSel=document.getElementById('q-bank');
+banks.forEach(b=>{const o=document.createElement('option');o.value=b;o.textContent=b;bSel.appendChild(o)});
+function renderExplorer(){
+  const q=document.getElementById('q-search').value.toLowerCase();
+  const bank=document.getElementById('q-bank').value;
+  const seg=document.getElementById('q-seg').value;
+  const type=document.getElementById('q-type').value;
+  const lounge=document.getElementById('q-lounge').value;
+  const fee=document.getElementById('q-fee').value;
+  const f=CARDS.filter(c=>{
+    if(q&&!`${c.n} ${c.b} ${c.bf} ${c.rt} ${c.bc}`.toLowerCase().includes(q))return false;
+    if(bank&&c.b!==bank)return false;
+    if(seg&&c.seg!==seg)return false;
+    if(type==='cashback'&&!c.rt.toLowerCase().includes('cashback'))return false;
+    if(type==='points'&&c.rt.toLowerCase().includes('cashback'))return false;
+    if(lounge==='dom'&&!c.ld)return false;
+    if(lounge==='both'&&(!c.ld||!c.li))return false;
+    if(fee&&c.af>+fee)return false;
+    return true;
+  });
+  document.getElementById('exp-count').textContent=f.length+' of '+CARDS.length+' cards';
+  document.getElementById('exp-grid').innerHTML=f.map(c=>{
+    const fee=c.af===0?'<span style="color:var(--green);font-weight:700">Free</span>':'\u20B9'+c.af.toLocaleString('en-IN');
+    const lg=c.ld?`<span class="er-val blue">${c.li?'\u2605\u2605':'\u2605'}</span>`:'<span class="er-val dim">\u2014</span>';
+    return `<div class="exp-row"><div><div class="er-name">${c.n}</div><div class="er-bank">${c.b}</div></div><div class="er-val">${fee}</div><div class="er-val blue">${c.brt}%</div><div class="er-val ec3 dim">${c.seg}</div><div class="ec4">${lg}</div><div class="er-val ec5" style="color:var(--amber)">${c.r}</div></div>`;
+  }).join('');
+}
+renderExplorer();
+</script>
+</body>
+</html>

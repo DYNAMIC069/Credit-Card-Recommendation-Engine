@@ -1,0 +1,901 @@
+user_id,age,monthly_spend,spend_category,pref_perk,fee_preference
+0,40,20000,Travel,Forex,Mid (1.5-5K)
+1,23,10000,Travel,Cashback,Low (<1500)
+2,41,20000,Food,Cashback,Free
+3,39,20000,Fuel,Rewards,Premium (5K+)
+4,36,20000,Shopping,Zero Fee,Mid (1.5-5K)
+5,30,35000,Utility,Forex,Free
+6,50,20000,Utility,Rewards,Low (<1500)
+7,46,10000,Food,Zero Fee,Mid (1.5-5K)
+8,28,35000,Shopping,Forex,Free
+9,40,20000,Food,Lounge,Mid (1.5-5K)
+10,25,35000,Utility,Premium,Mid (1.5-5K)
+11,26,35000,Travel,Lounge,Low (<1500)
+12,42,35000,Shopping,Cashback,Low (<1500)
+13,43,35000,Food,Cashback,Low (<1500)
+14,31,35000,Fuel,Lounge,Low (<1500)
+15,48,20000,Shopping,Forex,Mid (1.5-5K)
+16,54,20000,Food,Cashback,Mid (1.5-5K)
+17,38,60000,Fuel,Rewards,Mid (1.5-5K)
+18,42,10000,Utility,Forex,Mid (1.5-5K)
+19,54,20000,Travel,Lounge,Premium (5K+)
+20,37,20000,Shopping,Rewards,Premium (5K+)
+21,48,100000,Food,Cashback,Free
+22,37,10000,Fuel,Premium,Premium (5K+)
+23,29,10000,Shopping,Lounge,Mid (1.5-5K)
+24,47,5000,Shopping,Lounge,Mid (1.5-5K)
+25,34,20000,Shopping,Premium,Mid (1.5-5K)
+26,44,5000,Food,Rewards,Low (<1500)
+27,32,10000,Fuel,Rewards,Free
+28,28,5000,Travel,Rewards,Free
+29,47,10000,Shopping,Cashback,Premium (5K+)
+30,42,20000,Shopping,Forex,Low (<1500)
+31,34,20000,Fuel,Premium,Mid (1.5-5K)
+32,28,35000,Health,Premium,Low (<1500)
+33,52,10000,Health,Lounge,Low (<1500)
+34,49,35000,Utility,Cashback,Low (<1500)
+35,45,10000,Travel,Zero Fee,Low (<1500)
+36,37,10000,Fuel,Cashback,Low (<1500)
+37,40,20000,Utility,Lounge,Mid (1.5-5K)
+38,54,20000,Food,Rewards,Free
+39,41,60000,Utility,Cashback,Mid (1.5-5K)
+40,27,5000,Shopping,Rewards,Mid (1.5-5K)
+41,42,10000,Shopping,Lounge,Premium (5K+)
+42,46,100000,Shopping,Cashback,Premium (5K+)
+43,29,100000,Food,Lounge,Mid (1.5-5K)
+44,33,20000,Fuel,Forex,Free
+45,30,20000,Health,Lounge,Low (<1500)
+46,32,35000,Shopping,Lounge,Mid (1.5-5K)
+47,41,20000,Health,Cashback,Low (<1500)
+48,45,20000,Utility,Rewards,Free
+49,51,20000,Shopping,Lounge,Premium (5K+)
+50,34,5000,Utility,Forex,Mid (1.5-5K)
+51,25,20000,Shopping,Zero Fee,Low (<1500)
+52,35,100000,Shopping,Zero Fee,Free
+53,31,20000,Shopping,Cashback,Low (<1500)
+54,27,10000,Shopping,Cashback,Free
+55,29,20000,Food,Premium,Low (<1500)
+56,40,35000,Food,Rewards,Low (<1500)
+57,39,5000,Fuel,Lounge,Low (<1500)
+58,54,100000,Shopping,Rewards,Mid (1.5-5K)
+59,49,10000,Food,Lounge,Mid (1.5-5K)
+60,24,10000,Fuel,Lounge,Free
+61,52,10000,Shopping,Forex,Mid (1.5-5K)
+62,48,60000,Health,Lounge,Mid (1.5-5K)
+63,26,10000,Food,Premium,Mid (1.5-5K)
+64,54,5000,Food,Cashback,Mid (1.5-5K)
+65,32,10000,Travel,Premium,Mid (1.5-5K)
+66,24,20000,Shopping,Cashback,Premium (5K+)
+67,35,35000,Shopping,Rewards,Free
+68,29,20000,Food,Forex,Mid (1.5-5K)
+69,38,35000,Travel,Cashback,Mid (1.5-5K)
+70,29,10000,Health,Cashback,Low (<1500)
+71,35,20000,Shopping,Zero Fee,Free
+72,54,20000,Health,Forex,Free
+73,36,10000,Fuel,Cashback,Premium (5K+)
+74,42,5000,Food,Cashback,Mid (1.5-5K)
+75,40,20000,Shopping,Rewards,Mid (1.5-5K)
+76,48,20000,Shopping,Rewards,Mid (1.5-5K)
+77,43,20000,Travel,Rewards,Low (<1500)
+78,25,35000,Shopping,Premium,Low (<1500)
+79,32,10000,Shopping,Cashback,Mid (1.5-5K)
+80,26,35000,Health,Premium,Low (<1500)
+81,29,35000,Health,Lounge,Free
+82,48,10000,Food,Lounge,Free
+83,33,20000,Travel,Cashback,Premium (5K+)
+84,38,20000,Travel,Rewards,Low (<1500)
+85,33,10000,Health,Cashback,Mid (1.5-5K)
+86,53,20000,Shopping,Cashback,Free
+87,43,20000,Travel,Premium,Low (<1500)
+88,27,100000,Shopping,Cashback,Mid (1.5-5K)
+89,47,20000,Utility,Lounge,Low (<1500)
+90,22,60000,Utility,Cashback,Mid (1.5-5K)
+91,26,20000,Fuel,Cashback,Low (<1500)
+92,39,5000,Health,Zero Fee,Mid (1.5-5K)
+93,48,20000,Shopping,Cashback,Low (<1500)
+94,28,5000,Travel,Rewards,Low (<1500)
+95,51,10000,Shopping,Premium,Free
+96,31,20000,Utility,Forex,Mid (1.5-5K)
+97,23,5000,Travel,Rewards,Low (<1500)
+98,44,20000,Shopping,Cashback,Premium (5K+)
+99,43,5000,Travel,Cashback,Mid (1.5-5K)
+100,51,35000,Travel,Lounge,Mid (1.5-5K)
+101,38,20000,Fuel,Lounge,Premium (5K+)
+102,37,35000,Fuel,Cashback,Mid (1.5-5K)
+103,22,20000,Shopping,Cashback,Low (<1500)
+104,40,10000,Fuel,Rewards,Low (<1500)
+105,28,20000,Shopping,Cashback,Mid (1.5-5K)
+106,31,10000,Health,Forex,Free
+107,38,20000,Utility,Forex,Mid (1.5-5K)
+108,47,20000,Utility,Rewards,Mid (1.5-5K)
+109,48,20000,Shopping,Forex,Premium (5K+)
+110,22,10000,Utility,Lounge,Mid (1.5-5K)
+111,53,20000,Shopping,Rewards,Free
+112,54,5000,Utility,Cashback,Premium (5K+)
+113,43,35000,Shopping,Rewards,Mid (1.5-5K)
+114,35,20000,Utility,Cashback,Low (<1500)
+115,52,35000,Travel,Rewards,Mid (1.5-5K)
+116,52,35000,Travel,Premium,Free
+117,27,35000,Food,Zero Fee,Free
+118,54,10000,Utility,Cashback,Mid (1.5-5K)
+119,48,5000,Utility,Lounge,Low (<1500)
+120,53,20000,Travel,Lounge,Free
+121,39,35000,Food,Zero Fee,Premium (5K+)
+122,35,35000,Shopping,Forex,Low (<1500)
+123,45,60000,Shopping,Lounge,Mid (1.5-5K)
+124,46,35000,Shopping,Zero Fee,Free
+125,42,20000,Fuel,Rewards,Low (<1500)
+126,26,5000,Utility,Lounge,Low (<1500)
+127,27,35000,Travel,Cashback,Mid (1.5-5K)
+128,52,20000,Health,Rewards,Mid (1.5-5K)
+129,41,35000,Travel,Lounge,Low (<1500)
+130,52,20000,Utility,Lounge,Mid (1.5-5K)
+131,25,20000,Health,Rewards,Low (<1500)
+132,34,20000,Shopping,Zero Fee,Mid (1.5-5K)
+133,48,100000,Shopping,Lounge,Mid (1.5-5K)
+134,35,10000,Health,Lounge,Low (<1500)
+135,32,20000,Health,Rewards,Mid (1.5-5K)
+136,38,20000,Shopping,Cashback,Mid (1.5-5K)
+137,25,20000,Shopping,Forex,Low (<1500)
+138,37,10000,Utility,Forex,Low (<1500)
+139,29,20000,Travel,Cashback,Mid (1.5-5K)
+140,48,100000,Utility,Rewards,Low (<1500)
+141,40,10000,Utility,Zero Fee,Premium (5K+)
+142,25,20000,Health,Premium,Premium (5K+)
+143,29,20000,Shopping,Cashback,Free
+144,26,60000,Travel,Rewards,Free
+145,54,10000,Health,Cashback,Free
+146,42,35000,Shopping,Zero Fee,Mid (1.5-5K)
+147,36,20000,Utility,Rewards,Low (<1500)
+148,50,10000,Shopping,Zero Fee,Low (<1500)
+149,29,5000,Utility,Rewards,Mid (1.5-5K)
+150,27,60000,Food,Lounge,Mid (1.5-5K)
+151,42,35000,Health,Cashback,Mid (1.5-5K)
+152,39,20000,Shopping,Zero Fee,Premium (5K+)
+153,30,35000,Shopping,Lounge,Premium (5K+)
+154,29,35000,Travel,Cashback,Premium (5K+)
+155,37,60000,Health,Forex,Mid (1.5-5K)
+156,53,10000,Utility,Rewards,Free
+157,32,10000,Fuel,Cashback,Low (<1500)
+158,50,10000,Travel,Premium,Mid (1.5-5K)
+159,41,20000,Health,Rewards,Low (<1500)
+160,40,20000,Travel,Cashback,Low (<1500)
+161,31,100000,Travel,Cashback,Mid (1.5-5K)
+162,29,5000,Shopping,Rewards,Premium (5K+)
+163,49,20000,Shopping,Premium,Low (<1500)
+164,33,5000,Travel,Lounge,Mid (1.5-5K)
+165,29,20000,Health,Forex,Low (<1500)
+166,47,35000,Fuel,Premium,Mid (1.5-5K)
+167,53,20000,Travel,Rewards,Low (<1500)
+168,42,60000,Fuel,Zero Fee,Premium (5K+)
+169,40,20000,Health,Rewards,Free
+170,36,10000,Travel,Lounge,Mid (1.5-5K)
+171,24,10000,Fuel,Rewards,Free
+172,35,20000,Shopping,Forex,Mid (1.5-5K)
+173,33,20000,Utility,Cashback,Mid (1.5-5K)
+174,45,5000,Shopping,Cashback,Premium (5K+)
+175,52,35000,Utility,Rewards,Low (<1500)
+176,50,20000,Utility,Cashback,Free
+177,48,20000,Shopping,Premium,Low (<1500)
+178,42,20000,Travel,Cashback,Mid (1.5-5K)
+179,44,20000,Fuel,Lounge,Free
+180,29,5000,Food,Zero Fee,Low (<1500)
+181,34,35000,Health,Cashback,Mid (1.5-5K)
+182,26,20000,Fuel,Zero Fee,Free
+183,41,35000,Health,Zero Fee,Free
+184,23,20000,Travel,Lounge,Mid (1.5-5K)
+185,25,20000,Travel,Forex,Premium (5K+)
+186,49,20000,Shopping,Cashback,Premium (5K+)
+187,30,5000,Shopping,Forex,Free
+188,36,35000,Shopping,Lounge,Mid (1.5-5K)
+189,30,5000,Shopping,Lounge,Low (<1500)
+190,48,5000,Food,Forex,Low (<1500)
+191,24,20000,Utility,Lounge,Mid (1.5-5K)
+192,26,35000,Food,Premium,Mid (1.5-5K)
+193,41,20000,Health,Rewards,Free
+194,29,35000,Food,Zero Fee,Mid (1.5-5K)
+195,38,20000,Health,Cashback,Low (<1500)
+196,25,35000,Shopping,Premium,Low (<1500)
+197,48,5000,Health,Forex,Free
+198,36,20000,Fuel,Rewards,Premium (5K+)
+199,33,35000,Fuel,Cashback,Free
+200,47,60000,Shopping,Lounge,Low (<1500)
+201,49,10000,Shopping,Rewards,Free
+202,45,10000,Travel,Zero Fee,Mid (1.5-5K)
+203,46,20000,Travel,Cashback,Mid (1.5-5K)
+204,35,10000,Health,Premium,Free
+205,35,10000,Health,Rewards,Low (<1500)
+206,39,35000,Shopping,Lounge,Mid (1.5-5K)
+207,37,20000,Utility,Zero Fee,Premium (5K+)
+208,47,20000,Fuel,Premium,Low (<1500)
+209,24,5000,Health,Zero Fee,Low (<1500)
+210,37,20000,Utility,Premium,Low (<1500)
+211,40,10000,Travel,Forex,Premium (5K+)
+212,29,35000,Utility,Zero Fee,Low (<1500)
+213,41,20000,Food,Cashback,Free
+214,34,20000,Shopping,Rewards,Mid (1.5-5K)
+215,46,20000,Travel,Premium,Free
+216,41,20000,Health,Zero Fee,Mid (1.5-5K)
+217,41,10000,Fuel,Zero Fee,Low (<1500)
+218,35,10000,Utility,Premium,Low (<1500)
+219,44,20000,Shopping,Premium,Free
+220,35,20000,Shopping,Rewards,Low (<1500)
+221,32,10000,Travel,Rewards,Free
+222,27,20000,Utility,Rewards,Mid (1.5-5K)
+223,44,20000,Food,Rewards,Free
+224,26,10000,Travel,Forex,Free
+225,30,60000,Shopping,Cashback,Low (<1500)
+226,22,100000,Travel,Cashback,Free
+227,49,10000,Shopping,Premium,Mid (1.5-5K)
+228,48,60000,Utility,Premium,Mid (1.5-5K)
+229,42,5000,Utility,Zero Fee,Premium (5K+)
+230,47,10000,Food,Rewards,Mid (1.5-5K)
+231,49,10000,Travel,Zero Fee,Low (<1500)
+232,44,20000,Travel,Premium,Free
+233,23,35000,Shopping,Zero Fee,Free
+234,52,10000,Health,Cashback,Low (<1500)
+235,22,5000,Travel,Lounge,Mid (1.5-5K)
+236,41,20000,Food,Lounge,Mid (1.5-5K)
+237,40,10000,Food,Cashback,Low (<1500)
+238,52,10000,Utility,Cashback,Free
+239,28,60000,Travel,Cashback,Free
+240,24,10000,Fuel,Rewards,Free
+241,28,5000,Travel,Premium,Free
+242,26,5000,Fuel,Zero Fee,Low (<1500)
+243,27,10000,Travel,Cashback,Free
+244,32,35000,Food,Rewards,Low (<1500)
+245,42,35000,Fuel,Premium,Mid (1.5-5K)
+246,27,20000,Food,Forex,Low (<1500)
+247,47,5000,Health,Cashback,Premium (5K+)
+248,24,10000,Fuel,Premium,Premium (5K+)
+249,43,10000,Health,Zero Fee,Low (<1500)
+250,32,10000,Travel,Rewards,Premium (5K+)
+251,35,10000,Utility,Rewards,Free
+252,23,20000,Fuel,Forex,Premium (5K+)
+253,39,10000,Utility,Lounge,Low (<1500)
+254,50,10000,Fuel,Zero Fee,Premium (5K+)
+255,49,20000,Food,Rewards,Mid (1.5-5K)
+256,33,35000,Utility,Premium,Mid (1.5-5K)
+257,47,20000,Fuel,Zero Fee,Premium (5K+)
+258,44,20000,Fuel,Cashback,Free
+259,33,10000,Health,Cashback,Premium (5K+)
+260,43,20000,Shopping,Premium,Premium (5K+)
+261,39,10000,Health,Cashback,Low (<1500)
+262,54,20000,Food,Zero Fee,Free
+263,49,35000,Shopping,Zero Fee,Mid (1.5-5K)
+264,54,35000,Shopping,Forex,Low (<1500)
+265,35,35000,Food,Lounge,Mid (1.5-5K)
+266,35,35000,Food,Rewards,Low (<1500)
+267,35,10000,Food,Forex,Mid (1.5-5K)
+268,22,10000,Fuel,Rewards,Free
+269,24,35000,Fuel,Rewards,Free
+270,43,100000,Shopping,Cashback,Mid (1.5-5K)
+271,33,5000,Shopping,Forex,Mid (1.5-5K)
+272,36,20000,Food,Premium,Mid (1.5-5K)
+273,38,10000,Utility,Premium,Mid (1.5-5K)
+274,38,35000,Health,Premium,Premium (5K+)
+275,28,5000,Shopping,Rewards,Free
+276,53,20000,Travel,Lounge,Mid (1.5-5K)
+277,28,20000,Travel,Cashback,Free
+278,41,35000,Travel,Forex,Premium (5K+)
+279,53,20000,Shopping,Rewards,Free
+280,26,10000,Health,Cashback,Low (<1500)
+281,25,35000,Travel,Premium,Free
+282,23,35000,Travel,Rewards,Premium (5K+)
+283,32,20000,Fuel,Lounge,Mid (1.5-5K)
+284,46,20000,Food,Forex,Mid (1.5-5K)
+285,36,5000,Utility,Cashback,Low (<1500)
+286,37,35000,Utility,Lounge,Free
+287,53,10000,Utility,Rewards,Low (<1500)
+288,33,10000,Shopping,Zero Fee,Low (<1500)
+289,50,20000,Shopping,Rewards,Low (<1500)
+290,39,60000,Shopping,Zero Fee,Low (<1500)
+291,43,5000,Health,Forex,Low (<1500)
+292,39,20000,Utility,Premium,Mid (1.5-5K)
+293,42,20000,Travel,Lounge,Mid (1.5-5K)
+294,52,35000,Fuel,Cashback,Mid (1.5-5K)
+295,34,10000,Health,Cashback,Mid (1.5-5K)
+296,43,60000,Fuel,Forex,Mid (1.5-5K)
+297,48,35000,Travel,Cashback,Mid (1.5-5K)
+298,42,20000,Food,Rewards,Mid (1.5-5K)
+299,23,20000,Shopping,Rewards,Low (<1500)
+300,31,20000,Food,Lounge,Low (<1500)
+301,26,60000,Health,Cashback,Free
+302,43,20000,Shopping,Lounge,Mid (1.5-5K)
+303,35,60000,Health,Cashback,Mid (1.5-5K)
+304,53,5000,Fuel,Premium,Free
+305,48,35000,Travel,Rewards,Premium (5K+)
+306,53,35000,Food,Rewards,Mid (1.5-5K)
+307,33,35000,Food,Rewards,Free
+308,45,5000,Utility,Lounge,Premium (5K+)
+309,24,20000,Fuel,Zero Fee,Low (<1500)
+310,38,10000,Utility,Cashback,Low (<1500)
+311,33,10000,Shopping,Zero Fee,Premium (5K+)
+312,29,10000,Health,Zero Fee,Low (<1500)
+313,23,20000,Food,Cashback,Free
+314,42,35000,Shopping,Lounge,Low (<1500)
+315,37,10000,Travel,Cashback,Premium (5K+)
+316,36,35000,Food,Lounge,Free
+317,36,35000,Food,Rewards,Free
+318,48,10000,Utility,Forex,Free
+319,41,10000,Health,Premium,Free
+320,40,35000,Health,Zero Fee,Mid (1.5-5K)
+321,23,35000,Fuel,Rewards,Mid (1.5-5K)
+322,51,20000,Travel,Premium,Low (<1500)
+323,47,35000,Fuel,Rewards,Mid (1.5-5K)
+324,22,60000,Food,Lounge,Low (<1500)
+325,51,20000,Shopping,Rewards,Mid (1.5-5K)
+326,54,100000,Utility,Zero Fee,Mid (1.5-5K)
+327,44,10000,Shopping,Rewards,Mid (1.5-5K)
+328,41,35000,Fuel,Premium,Premium (5K+)
+329,39,60000,Health,Cashback,Premium (5K+)
+330,48,20000,Travel,Cashback,Low (<1500)
+331,28,35000,Shopping,Premium,Low (<1500)
+332,40,60000,Fuel,Forex,Low (<1500)
+333,30,60000,Shopping,Premium,Low (<1500)
+334,28,35000,Travel,Rewards,Free
+335,25,10000,Travel,Zero Fee,Premium (5K+)
+336,42,10000,Health,Zero Fee,Premium (5K+)
+337,53,20000,Health,Rewards,Free
+338,51,5000,Food,Rewards,Premium (5K+)
+339,50,5000,Fuel,Cashback,Premium (5K+)
+340,34,20000,Health,Forex,Mid (1.5-5K)
+341,49,5000,Food,Zero Fee,Mid (1.5-5K)
+342,22,20000,Health,Rewards,Mid (1.5-5K)
+343,54,5000,Food,Premium,Free
+344,34,20000,Travel,Cashback,Low (<1500)
+345,45,20000,Food,Zero Fee,Mid (1.5-5K)
+346,37,35000,Fuel,Rewards,Mid (1.5-5K)
+347,51,20000,Food,Cashback,Mid (1.5-5K)
+348,34,60000,Food,Rewards,Free
+349,43,35000,Shopping,Cashback,Low (<1500)
+350,54,5000,Shopping,Rewards,Premium (5K+)
+351,36,20000,Food,Rewards,Premium (5K+)
+352,27,60000,Shopping,Forex,Premium (5K+)
+353,48,35000,Travel,Lounge,Free
+354,50,35000,Travel,Lounge,Low (<1500)
+355,31,10000,Shopping,Forex,Mid (1.5-5K)
+356,52,20000,Travel,Premium,Low (<1500)
+357,52,20000,Food,Cashback,Premium (5K+)
+358,54,5000,Food,Premium,Low (<1500)
+359,22,10000,Shopping,Forex,Mid (1.5-5K)
+360,27,35000,Travel,Rewards,Low (<1500)
+361,43,10000,Food,Cashback,Mid (1.5-5K)
+362,30,10000,Shopping,Premium,Free
+363,32,5000,Food,Cashback,Mid (1.5-5K)
+364,30,10000,Food,Premium,Low (<1500)
+365,54,100000,Travel,Zero Fee,Low (<1500)
+366,50,35000,Travel,Forex,Free
+367,50,60000,Travel,Forex,Free
+368,51,20000,Shopping,Forex,Premium (5K+)
+369,42,20000,Shopping,Forex,Low (<1500)
+370,43,20000,Utility,Forex,Free
+371,47,60000,Fuel,Premium,Mid (1.5-5K)
+372,49,20000,Travel,Premium,Low (<1500)
+373,27,20000,Utility,Cashback,Mid (1.5-5K)
+374,35,35000,Fuel,Zero Fee,Low (<1500)
+375,37,20000,Shopping,Forex,Free
+376,46,10000,Food,Rewards,Premium (5K+)
+377,49,5000,Fuel,Forex,Low (<1500)
+378,48,20000,Shopping,Premium,Free
+379,47,5000,Shopping,Zero Fee,Free
+380,43,20000,Shopping,Rewards,Premium (5K+)
+381,26,10000,Food,Rewards,Mid (1.5-5K)
+382,33,10000,Food,Lounge,Low (<1500)
+383,44,20000,Travel,Lounge,Premium (5K+)
+384,49,5000,Shopping,Premium,Premium (5K+)
+385,33,10000,Shopping,Rewards,Mid (1.5-5K)
+386,53,20000,Shopping,Cashback,Mid (1.5-5K)
+387,25,20000,Travel,Rewards,Free
+388,38,60000,Travel,Rewards,Low (<1500)
+389,46,60000,Health,Lounge,Mid (1.5-5K)
+390,23,100000,Health,Lounge,Free
+391,34,10000,Fuel,Cashback,Low (<1500)
+392,51,5000,Travel,Premium,Premium (5K+)
+393,50,35000,Travel,Rewards,Mid (1.5-5K)
+394,43,10000,Travel,Lounge,Mid (1.5-5K)
+395,53,100000,Health,Rewards,Low (<1500)
+396,42,10000,Health,Premium,Mid (1.5-5K)
+397,28,20000,Shopping,Cashback,Low (<1500)
+398,48,60000,Travel,Cashback,Low (<1500)
+399,23,60000,Travel,Lounge,Mid (1.5-5K)
+400,35,10000,Travel,Zero Fee,Low (<1500)
+401,22,10000,Travel,Lounge,Free
+402,49,60000,Travel,Forex,Free
+403,41,60000,Shopping,Lounge,Mid (1.5-5K)
+404,28,20000,Utility,Lounge,Low (<1500)
+405,43,5000,Travel,Rewards,Mid (1.5-5K)
+406,33,20000,Shopping,Rewards,Low (<1500)
+407,23,20000,Health,Cashback,Free
+408,50,20000,Fuel,Lounge,Premium (5K+)
+409,51,35000,Travel,Rewards,Mid (1.5-5K)
+410,42,20000,Utility,Cashback,Low (<1500)
+411,35,35000,Utility,Lounge,Premium (5K+)
+412,54,35000,Shopping,Premium,Mid (1.5-5K)
+413,52,10000,Travel,Lounge,Low (<1500)
+414,23,20000,Shopping,Cashback,Free
+415,49,10000,Travel,Rewards,Low (<1500)
+416,27,20000,Travel,Premium,Premium (5K+)
+417,24,35000,Shopping,Cashback,Low (<1500)
+418,34,100000,Shopping,Lounge,Mid (1.5-5K)
+419,24,20000,Shopping,Lounge,Low (<1500)
+420,37,10000,Food,Cashback,Premium (5K+)
+421,47,20000,Shopping,Lounge,Low (<1500)
+422,42,35000,Utility,Lounge,Mid (1.5-5K)
+423,49,20000,Utility,Cashback,Low (<1500)
+424,37,35000,Health,Cashback,Premium (5K+)
+425,32,5000,Food,Cashback,Mid (1.5-5K)
+426,23,5000,Travel,Lounge,Free
+427,35,35000,Fuel,Lounge,Premium (5K+)
+428,44,20000,Shopping,Premium,Premium (5K+)
+429,39,5000,Shopping,Premium,Mid (1.5-5K)
+430,52,35000,Utility,Rewards,Low (<1500)
+431,39,60000,Shopping,Lounge,Mid (1.5-5K)
+432,37,60000,Shopping,Lounge,Free
+433,28,20000,Health,Cashback,Low (<1500)
+434,29,20000,Shopping,Rewards,Free
+435,47,20000,Shopping,Rewards,Premium (5K+)
+436,26,20000,Food,Cashback,Low (<1500)
+437,28,10000,Shopping,Rewards,Mid (1.5-5K)
+438,49,35000,Shopping,Zero Fee,Mid (1.5-5K)
+439,27,10000,Food,Rewards,Premium (5K+)
+440,47,35000,Health,Lounge,Premium (5K+)
+441,35,35000,Shopping,Premium,Premium (5K+)
+442,43,20000,Fuel,Rewards,Mid (1.5-5K)
+443,36,35000,Health,Rewards,Low (<1500)
+444,34,100000,Shopping,Rewards,Low (<1500)
+445,42,20000,Travel,Lounge,Free
+446,40,5000,Utility,Rewards,Premium (5K+)
+447,32,10000,Shopping,Premium,Low (<1500)
+448,51,20000,Health,Zero Fee,Low (<1500)
+449,29,35000,Health,Rewards,Mid (1.5-5K)
+450,34,20000,Shopping,Lounge,Low (<1500)
+451,47,20000,Health,Zero Fee,Free
+452,26,10000,Shopping,Lounge,Mid (1.5-5K)
+453,51,10000,Health,Premium,Mid (1.5-5K)
+454,42,10000,Shopping,Cashback,Mid (1.5-5K)
+455,53,20000,Shopping,Forex,Free
+456,37,35000,Utility,Lounge,Mid (1.5-5K)
+457,33,5000,Shopping,Premium,Low (<1500)
+458,25,20000,Shopping,Premium,Low (<1500)
+459,24,20000,Utility,Premium,Mid (1.5-5K)
+460,52,10000,Shopping,Rewards,Low (<1500)
+461,49,10000,Shopping,Lounge,Low (<1500)
+462,47,5000,Food,Lounge,Mid (1.5-5K)
+463,26,60000,Food,Lounge,Premium (5K+)
+464,36,5000,Shopping,Cashback,Premium (5K+)
+465,33,35000,Fuel,Premium,Premium (5K+)
+466,36,20000,Fuel,Lounge,Mid (1.5-5K)
+467,28,35000,Fuel,Lounge,Low (<1500)
+468,52,35000,Travel,Zero Fee,Low (<1500)
+469,54,20000,Travel,Cashback,Premium (5K+)
+470,48,5000,Food,Premium,Low (<1500)
+471,34,10000,Shopping,Premium,Free
+472,46,35000,Travel,Cashback,Free
+473,31,20000,Fuel,Cashback,Mid (1.5-5K)
+474,33,35000,Shopping,Rewards,Low (<1500)
+475,43,10000,Travel,Zero Fee,Free
+476,43,35000,Food,Cashback,Mid (1.5-5K)
+477,31,35000,Travel,Rewards,Premium (5K+)
+478,43,10000,Travel,Forex,Mid (1.5-5K)
+479,30,35000,Travel,Premium,Premium (5K+)
+480,23,20000,Travel,Cashback,Premium (5K+)
+481,33,35000,Fuel,Zero Fee,Low (<1500)
+482,44,10000,Health,Zero Fee,Premium (5K+)
+483,36,20000,Shopping,Forex,Mid (1.5-5K)
+484,47,20000,Health,Cashback,Free
+485,26,60000,Utility,Premium,Low (<1500)
+486,30,20000,Shopping,Rewards,Free
+487,43,5000,Food,Lounge,Low (<1500)
+488,46,20000,Shopping,Premium,Free
+489,53,35000,Utility,Lounge,Premium (5K+)
+490,43,100000,Food,Zero Fee,Mid (1.5-5K)
+491,44,35000,Fuel,Cashback,Free
+492,34,60000,Shopping,Rewards,Premium (5K+)
+493,33,20000,Shopping,Zero Fee,Mid (1.5-5K)
+494,43,20000,Shopping,Premium,Free
+495,51,20000,Food,Rewards,Low (<1500)
+496,51,10000,Shopping,Lounge,Premium (5K+)
+497,39,20000,Utility,Cashback,Mid (1.5-5K)
+498,33,35000,Health,Cashback,Low (<1500)
+499,34,60000,Travel,Rewards,Low (<1500)
+500,37,35000,Health,Zero Fee,Low (<1500)
+501,42,35000,Utility,Zero Fee,Low (<1500)
+502,52,35000,Shopping,Lounge,Mid (1.5-5K)
+503,26,60000,Travel,Rewards,Mid (1.5-5K)
+504,43,20000,Food,Zero Fee,Free
+505,48,10000,Shopping,Cashback,Mid (1.5-5K)
+506,52,20000,Travel,Zero Fee,Free
+507,34,35000,Travel,Zero Fee,Free
+508,51,10000,Shopping,Rewards,Low (<1500)
+509,39,20000,Shopping,Zero Fee,Premium (5K+)
+510,44,35000,Shopping,Lounge,Low (<1500)
+511,41,10000,Food,Rewards,Mid (1.5-5K)
+512,38,20000,Shopping,Premium,Low (<1500)
+513,38,20000,Travel,Lounge,Low (<1500)
+514,41,10000,Travel,Cashback,Premium (5K+)
+515,33,10000,Utility,Zero Fee,Mid (1.5-5K)
+516,29,5000,Travel,Cashback,Premium (5K+)
+517,26,5000,Shopping,Lounge,Premium (5K+)
+518,33,100000,Shopping,Rewards,Low (<1500)
+519,32,5000,Health,Premium,Mid (1.5-5K)
+520,34,10000,Utility,Cashback,Mid (1.5-5K)
+521,23,20000,Health,Cashback,Low (<1500)
+522,39,100000,Health,Rewards,Mid (1.5-5K)
+523,36,35000,Shopping,Lounge,Free
+524,35,20000,Shopping,Lounge,Low (<1500)
+525,40,20000,Fuel,Cashback,Mid (1.5-5K)
+526,48,35000,Travel,Cashback,Mid (1.5-5K)
+527,48,35000,Travel,Lounge,Mid (1.5-5K)
+528,22,20000,Shopping,Cashback,Mid (1.5-5K)
+529,42,35000,Food,Lounge,Free
+530,41,20000,Food,Forex,Low (<1500)
+531,54,5000,Food,Cashback,Low (<1500)
+532,36,10000,Utility,Lounge,Mid (1.5-5K)
+533,39,35000,Shopping,Premium,Premium (5K+)
+534,44,20000,Food,Lounge,Premium (5K+)
+535,29,5000,Shopping,Cashback,Free
+536,32,35000,Travel,Premium,Premium (5K+)
+537,48,20000,Travel,Premium,Free
+538,29,60000,Utility,Rewards,Premium (5K+)
+539,31,10000,Shopping,Cashback,Free
+540,41,35000,Shopping,Zero Fee,Free
+541,43,20000,Shopping,Cashback,Premium (5K+)
+542,23,35000,Travel,Cashback,Mid (1.5-5K)
+543,30,10000,Utility,Rewards,Premium (5K+)
+544,33,60000,Health,Premium,Free
+545,54,10000,Utility,Cashback,Free
+546,33,20000,Utility,Zero Fee,Mid (1.5-5K)
+547,25,10000,Health,Zero Fee,Premium (5K+)
+548,41,20000,Shopping,Zero Fee,Mid (1.5-5K)
+549,53,20000,Shopping,Lounge,Mid (1.5-5K)
+550,31,10000,Fuel,Forex,Mid (1.5-5K)
+551,31,60000,Travel,Forex,Low (<1500)
+552,36,20000,Travel,Zero Fee,Mid (1.5-5K)
+553,22,20000,Health,Zero Fee,Mid (1.5-5K)
+554,42,10000,Travel,Lounge,Free
+555,51,35000,Food,Forex,Free
+556,36,20000,Health,Cashback,Free
+557,31,10000,Shopping,Rewards,Mid (1.5-5K)
+558,28,5000,Fuel,Forex,Mid (1.5-5K)
+559,34,35000,Shopping,Rewards,Mid (1.5-5K)
+560,28,10000,Shopping,Rewards,Mid (1.5-5K)
+561,36,35000,Food,Zero Fee,Low (<1500)
+562,38,10000,Health,Cashback,Free
+563,36,20000,Shopping,Lounge,Low (<1500)
+564,38,35000,Shopping,Rewards,Premium (5K+)
+565,41,20000,Fuel,Rewards,Mid (1.5-5K)
+566,32,35000,Travel,Premium,Mid (1.5-5K)
+567,43,10000,Health,Zero Fee,Free
+568,25,20000,Fuel,Zero Fee,Low (<1500)
+569,52,35000,Fuel,Forex,Free
+570,24,20000,Travel,Premium,Free
+571,49,20000,Utility,Forex,Mid (1.5-5K)
+572,34,20000,Health,Rewards,Mid (1.5-5K)
+573,48,10000,Health,Premium,Premium (5K+)
+574,53,60000,Shopping,Rewards,Free
+575,32,35000,Food,Lounge,Mid (1.5-5K)
+576,50,35000,Shopping,Cashback,Mid (1.5-5K)
+577,49,10000,Shopping,Rewards,Premium (5K+)
+578,24,20000,Food,Zero Fee,Mid (1.5-5K)
+579,31,100000,Shopping,Zero Fee,Free
+580,37,20000,Shopping,Rewards,Free
+581,22,5000,Health,Lounge,Low (<1500)
+582,47,35000,Health,Lounge,Low (<1500)
+583,37,35000,Shopping,Cashback,Mid (1.5-5K)
+584,42,20000,Utility,Rewards,Low (<1500)
+585,47,5000,Travel,Lounge,Free
+586,34,20000,Food,Cashback,Mid (1.5-5K)
+587,48,100000,Health,Rewards,Premium (5K+)
+588,40,20000,Shopping,Lounge,Premium (5K+)
+589,39,35000,Shopping,Zero Fee,Low (<1500)
+590,22,20000,Shopping,Cashback,Premium (5K+)
+591,39,20000,Shopping,Premium,Mid (1.5-5K)
+592,27,5000,Utility,Zero Fee,Mid (1.5-5K)
+593,38,10000,Food,Rewards,Mid (1.5-5K)
+594,36,20000,Utility,Rewards,Mid (1.5-5K)
+595,34,20000,Shopping,Premium,Low (<1500)
+596,48,60000,Food,Premium,Low (<1500)
+597,32,20000,Health,Lounge,Premium (5K+)
+598,37,10000,Food,Lounge,Mid (1.5-5K)
+599,53,10000,Health,Cashback,Free
+600,36,60000,Shopping,Zero Fee,Premium (5K+)
+601,47,20000,Food,Rewards,Mid (1.5-5K)
+602,33,100000,Health,Rewards,Free
+603,25,10000,Fuel,Rewards,Free
+604,39,20000,Shopping,Cashback,Low (<1500)
+605,25,20000,Shopping,Lounge,Mid (1.5-5K)
+606,32,35000,Shopping,Rewards,Mid (1.5-5K)
+607,33,20000,Shopping,Lounge,Low (<1500)
+608,27,100000,Fuel,Cashback,Mid (1.5-5K)
+609,50,20000,Travel,Zero Fee,Low (<1500)
+610,23,35000,Food,Rewards,Free
+611,42,10000,Travel,Lounge,Mid (1.5-5K)
+612,34,5000,Shopping,Zero Fee,Free
+613,32,20000,Health,Cashback,Mid (1.5-5K)
+614,24,100000,Shopping,Forex,Free
+615,26,100000,Food,Lounge,Low (<1500)
+616,53,35000,Shopping,Rewards,Mid (1.5-5K)
+617,52,5000,Food,Cashback,Mid (1.5-5K)
+618,54,10000,Shopping,Premium,Mid (1.5-5K)
+619,33,10000,Travel,Lounge,Mid (1.5-5K)
+620,40,20000,Food,Lounge,Mid (1.5-5K)
+621,27,20000,Shopping,Cashback,Low (<1500)
+622,45,10000,Fuel,Rewards,Mid (1.5-5K)
+623,34,20000,Food,Cashback,Mid (1.5-5K)
+624,28,20000,Food,Cashback,Mid (1.5-5K)
+625,42,35000,Travel,Premium,Low (<1500)
+626,52,20000,Utility,Zero Fee,Free
+627,52,20000,Shopping,Premium,Mid (1.5-5K)
+628,31,60000,Health,Lounge,Low (<1500)
+629,24,100000,Shopping,Lounge,Mid (1.5-5K)
+630,22,35000,Shopping,Rewards,Premium (5K+)
+631,31,100000,Fuel,Cashback,Free
+632,42,60000,Shopping,Rewards,Mid (1.5-5K)
+633,33,10000,Food,Rewards,Mid (1.5-5K)
+634,46,35000,Health,Zero Fee,Low (<1500)
+635,40,20000,Food,Rewards,Free
+636,22,10000,Shopping,Cashback,Free
+637,48,20000,Fuel,Zero Fee,Free
+638,54,10000,Shopping,Rewards,Premium (5K+)
+639,33,100000,Utility,Lounge,Low (<1500)
+640,46,5000,Shopping,Lounge,Low (<1500)
+641,50,35000,Utility,Premium,Mid (1.5-5K)
+642,38,35000,Food,Zero Fee,Low (<1500)
+643,38,60000,Utility,Rewards,Low (<1500)
+644,48,5000,Shopping,Rewards,Low (<1500)
+645,45,35000,Travel,Cashback,Premium (5K+)
+646,47,35000,Food,Premium,Low (<1500)
+647,39,10000,Fuel,Cashback,Premium (5K+)
+648,34,5000,Fuel,Forex,Premium (5K+)
+649,46,20000,Shopping,Premium,Premium (5K+)
+650,39,20000,Food,Rewards,Free
+651,33,20000,Shopping,Rewards,Mid (1.5-5K)
+652,33,5000,Shopping,Premium,Mid (1.5-5K)
+653,40,20000,Health,Lounge,Low (<1500)
+654,30,10000,Health,Rewards,Low (<1500)
+655,52,60000,Shopping,Rewards,Mid (1.5-5K)
+656,48,10000,Travel,Lounge,Low (<1500)
+657,41,10000,Fuel,Forex,Mid (1.5-5K)
+658,28,60000,Shopping,Cashback,Mid (1.5-5K)
+659,44,100000,Fuel,Premium,Mid (1.5-5K)
+660,37,20000,Food,Lounge,Free
+661,32,20000,Health,Forex,Premium (5K+)
+662,24,10000,Health,Zero Fee,Free
+663,35,60000,Travel,Zero Fee,Mid (1.5-5K)
+664,44,35000,Food,Premium,Low (<1500)
+665,22,60000,Food,Zero Fee,Low (<1500)
+666,33,35000,Utility,Lounge,Mid (1.5-5K)
+667,40,10000,Health,Forex,Low (<1500)
+668,31,10000,Travel,Zero Fee,Premium (5K+)
+669,37,10000,Shopping,Lounge,Low (<1500)
+670,51,20000,Travel,Forex,Mid (1.5-5K)
+671,24,10000,Shopping,Lounge,Low (<1500)
+672,31,10000,Travel,Lounge,Mid (1.5-5K)
+673,28,20000,Shopping,Cashback,Mid (1.5-5K)
+674,34,35000,Shopping,Premium,Low (<1500)
+675,51,35000,Food,Lounge,Mid (1.5-5K)
+676,45,60000,Shopping,Zero Fee,Low (<1500)
+677,30,60000,Health,Premium,Mid (1.5-5K)
+678,44,10000,Travel,Rewards,Mid (1.5-5K)
+679,32,60000,Travel,Forex,Mid (1.5-5K)
+680,43,20000,Shopping,Cashback,Low (<1500)
+681,45,10000,Shopping,Cashback,Premium (5K+)
+682,36,20000,Utility,Lounge,Mid (1.5-5K)
+683,27,5000,Fuel,Lounge,Free
+684,32,10000,Fuel,Zero Fee,Free
+685,41,10000,Shopping,Rewards,Low (<1500)
+686,44,60000,Shopping,Zero Fee,Free
+687,25,5000,Travel,Forex,Premium (5K+)
+688,32,35000,Food,Lounge,Mid (1.5-5K)
+689,49,20000,Travel,Cashback,Free
+690,53,20000,Health,Forex,Mid (1.5-5K)
+691,30,60000,Shopping,Zero Fee,Mid (1.5-5K)
+692,45,20000,Fuel,Cashback,Low (<1500)
+693,38,35000,Fuel,Premium,Mid (1.5-5K)
+694,47,10000,Shopping,Rewards,Low (<1500)
+695,27,20000,Health,Cashback,Free
+696,44,20000,Shopping,Cashback,Low (<1500)
+697,31,20000,Health,Rewards,Low (<1500)
+698,25,35000,Shopping,Zero Fee,Mid (1.5-5K)
+699,54,35000,Utility,Zero Fee,Free
+700,54,60000,Fuel,Zero Fee,Free
+701,37,10000,Fuel,Lounge,Low (<1500)
+702,40,10000,Fuel,Cashback,Premium (5K+)
+703,22,20000,Travel,Lounge,Free
+704,47,5000,Travel,Lounge,Mid (1.5-5K)
+705,34,5000,Fuel,Cashback,Mid (1.5-5K)
+706,50,20000,Food,Cashback,Mid (1.5-5K)
+707,45,35000,Travel,Cashback,Low (<1500)
+708,37,60000,Food,Rewards,Mid (1.5-5K)
+709,22,35000,Health,Cashback,Free
+710,46,20000,Health,Cashback,Premium (5K+)
+711,50,100000,Travel,Forex,Low (<1500)
+712,50,60000,Health,Forex,Mid (1.5-5K)
+713,44,10000,Food,Lounge,Mid (1.5-5K)
+714,42,35000,Travel,Zero Fee,Low (<1500)
+715,50,10000,Fuel,Rewards,Low (<1500)
+716,34,20000,Travel,Premium,Low (<1500)
+717,46,60000,Food,Cashback,Free
+718,42,10000,Travel,Premium,Low (<1500)
+719,33,20000,Health,Lounge,Mid (1.5-5K)
+720,46,10000,Fuel,Rewards,Low (<1500)
+721,22,20000,Travel,Cashback,Low (<1500)
+722,43,20000,Shopping,Rewards,Mid (1.5-5K)
+723,28,35000,Travel,Rewards,Premium (5K+)
+724,35,35000,Shopping,Premium,Free
+725,29,20000,Food,Zero Fee,Mid (1.5-5K)
+726,23,20000,Food,Lounge,Low (<1500)
+727,54,10000,Health,Forex,Free
+728,52,100000,Shopping,Zero Fee,Low (<1500)
+729,33,10000,Shopping,Premium,Free
+730,45,35000,Shopping,Lounge,Mid (1.5-5K)
+731,37,20000,Fuel,Cashback,Low (<1500)
+732,27,20000,Travel,Rewards,Low (<1500)
+733,26,100000,Shopping,Premium,Premium (5K+)
+734,44,5000,Utility,Premium,Free
+735,48,20000,Food,Cashback,Low (<1500)
+736,53,35000,Shopping,Lounge,Premium (5K+)
+737,42,5000,Travel,Rewards,Low (<1500)
+738,48,100000,Fuel,Cashback,Low (<1500)
+739,54,10000,Food,Cashback,Mid (1.5-5K)
+740,22,20000,Fuel,Cashback,Free
+741,32,60000,Shopping,Lounge,Mid (1.5-5K)
+742,54,10000,Utility,Premium,Mid (1.5-5K)
+743,23,10000,Food,Cashback,Mid (1.5-5K)
+744,46,35000,Travel,Lounge,Free
+745,41,35000,Travel,Rewards,Free
+746,30,10000,Shopping,Zero Fee,Mid (1.5-5K)
+747,27,60000,Shopping,Rewards,Free
+748,24,60000,Food,Lounge,Premium (5K+)
+749,51,35000,Food,Premium,Mid (1.5-5K)
+750,43,5000,Shopping,Lounge,Premium (5K+)
+751,39,35000,Shopping,Lounge,Free
+752,30,35000,Shopping,Zero Fee,Premium (5K+)
+753,48,20000,Travel,Premium,Low (<1500)
+754,25,20000,Shopping,Lounge,Low (<1500)
+755,49,100000,Fuel,Rewards,Low (<1500)
+756,25,5000,Food,Lounge,Low (<1500)
+757,52,10000,Shopping,Premium,Low (<1500)
+758,40,20000,Travel,Forex,Free
+759,37,20000,Utility,Cashback,Mid (1.5-5K)
+760,47,35000,Fuel,Cashback,Low (<1500)
+761,22,35000,Fuel,Lounge,Premium (5K+)
+762,28,5000,Shopping,Forex,Mid (1.5-5K)
+763,35,10000,Shopping,Lounge,Low (<1500)
+764,50,60000,Travel,Premium,Mid (1.5-5K)
+765,43,60000,Travel,Rewards,Mid (1.5-5K)
+766,42,5000,Food,Rewards,Mid (1.5-5K)
+767,24,20000,Shopping,Rewards,Free
+768,47,35000,Shopping,Cashback,Low (<1500)
+769,34,35000,Shopping,Zero Fee,Free
+770,29,5000,Health,Rewards,Low (<1500)
+771,26,5000,Fuel,Premium,Mid (1.5-5K)
+772,30,20000,Fuel,Zero Fee,Mid (1.5-5K)
+773,34,60000,Travel,Cashback,Low (<1500)
+774,24,5000,Fuel,Lounge,Free
+775,47,60000,Travel,Rewards,Free
+776,22,60000,Utility,Rewards,Low (<1500)
+777,33,20000,Shopping,Rewards,Low (<1500)
+778,25,60000,Shopping,Rewards,Low (<1500)
+779,31,20000,Food,Lounge,Premium (5K+)
+780,54,60000,Fuel,Forex,Free
+781,23,100000,Health,Premium,Free
+782,23,60000,Travel,Rewards,Low (<1500)
+783,53,35000,Shopping,Forex,Mid (1.5-5K)
+784,32,5000,Health,Forex,Free
+785,36,35000,Utility,Lounge,Mid (1.5-5K)
+786,44,10000,Health,Zero Fee,Mid (1.5-5K)
+787,41,10000,Food,Premium,Premium (5K+)
+788,30,35000,Food,Zero Fee,Mid (1.5-5K)
+789,41,10000,Utility,Lounge,Low (<1500)
+790,22,60000,Travel,Zero Fee,Low (<1500)
+791,39,35000,Fuel,Lounge,Mid (1.5-5K)
+792,23,35000,Shopping,Lounge,Low (<1500)
+793,23,20000,Shopping,Zero Fee,Mid (1.5-5K)
+794,25,35000,Health,Premium,Mid (1.5-5K)
+795,32,35000,Fuel,Rewards,Low (<1500)
+796,46,35000,Utility,Lounge,Low (<1500)
+797,26,20000,Health,Cashback,Low (<1500)
+798,44,35000,Shopping,Premium,Premium (5K+)
+799,31,5000,Travel,Cashback,Low (<1500)
+800,37,20000,Shopping,Lounge,Mid (1.5-5K)
+801,31,10000,Travel,Premium,Free
+802,35,20000,Utility,Lounge,Mid (1.5-5K)
+803,46,5000,Travel,Lounge,Low (<1500)
+804,33,20000,Shopping,Rewards,Mid (1.5-5K)
+805,44,10000,Travel,Cashback,Premium (5K+)
+806,46,20000,Health,Zero Fee,Low (<1500)
+807,35,60000,Shopping,Cashback,Mid (1.5-5K)
+808,37,20000,Food,Zero Fee,Mid (1.5-5K)
+809,35,35000,Shopping,Lounge,Free
+810,51,10000,Health,Lounge,Free
+811,26,10000,Shopping,Cashback,Free
+812,49,10000,Shopping,Cashback,Premium (5K+)
+813,32,100000,Health,Cashback,Low (<1500)
+814,52,10000,Food,Premium,Low (<1500)
+815,40,10000,Food,Lounge,Free
+816,26,20000,Shopping,Rewards,Free
+817,39,10000,Food,Cashback,Free
+818,43,35000,Health,Cashback,Mid (1.5-5K)
+819,30,35000,Food,Rewards,Mid (1.5-5K)
+820,25,10000,Shopping,Forex,Free
+821,49,10000,Health,Premium,Free
+822,48,35000,Shopping,Premium,Free
+823,29,35000,Travel,Forex,Mid (1.5-5K)
+824,24,10000,Fuel,Cashback,Low (<1500)
+825,53,35000,Food,Cashback,Low (<1500)
+826,24,35000,Travel,Lounge,Free
+827,50,20000,Shopping,Rewards,Free
+828,54,20000,Health,Rewards,Premium (5K+)
+829,48,5000,Travel,Forex,Low (<1500)
+830,47,10000,Fuel,Rewards,Low (<1500)
+831,23,20000,Health,Cashback,Mid (1.5-5K)
+832,44,20000,Travel,Premium,Low (<1500)
+833,52,10000,Food,Rewards,Premium (5K+)
+834,41,20000,Shopping,Zero Fee,Mid (1.5-5K)
+835,30,35000,Shopping,Cashback,Free
+836,31,35000,Shopping,Rewards,Premium (5K+)
+837,54,10000,Food,Cashback,Low (<1500)
+838,30,60000,Health,Cashback,Low (<1500)
+839,28,20000,Utility,Lounge,Free
+840,50,35000,Food,Lounge,Free
+841,49,10000,Shopping,Cashback,Low (<1500)
+842,22,35000,Shopping,Forex,Free
+843,45,20000,Shopping,Forex,Low (<1500)
+844,39,20000,Food,Cashback,Low (<1500)
+845,28,5000,Travel,Rewards,Premium (5K+)
+846,37,20000,Utility,Zero Fee,Premium (5K+)
+847,25,35000,Travel,Lounge,Low (<1500)
+848,32,35000,Shopping,Cashback,Mid (1.5-5K)
+849,46,35000,Shopping,Forex,Mid (1.5-5K)
+850,28,35000,Shopping,Lounge,Free
+851,34,20000,Food,Cashback,Low (<1500)
+852,22,60000,Fuel,Lounge,Mid (1.5-5K)
+853,53,60000,Food,Cashback,Mid (1.5-5K)
+854,44,5000,Shopping,Forex,Free
+855,27,35000,Shopping,Cashback,Low (<1500)
+856,54,10000,Fuel,Premium,Low (<1500)
+857,23,100000,Utility,Zero Fee,Mid (1.5-5K)
+858,23,20000,Shopping,Cashback,Free
+859,52,10000,Food,Rewards,Mid (1.5-5K)
+860,45,35000,Fuel,Zero Fee,Mid (1.5-5K)
+861,43,60000,Travel,Lounge,Mid (1.5-5K)
+862,33,10000,Travel,Zero Fee,Mid (1.5-5K)
+863,34,10000,Shopping,Forex,Low (<1500)
+864,44,10000,Shopping,Lounge,Low (<1500)
+865,53,5000,Fuel,Cashback,Low (<1500)
+866,42,35000,Shopping,Cashback,Free
+867,50,20000,Health,Rewards,Premium (5K+)
+868,44,20000,Food,Cashback,Mid (1.5-5K)
+869,22,20000,Health,Rewards,Mid (1.5-5K)
+870,49,35000,Shopping,Premium,Low (<1500)
+871,22,10000,Health,Cashback,Free
+872,37,10000,Fuel,Premium,Premium (5K+)
+873,31,10000,Food,Premium,Low (<1500)
+874,35,20000,Utility,Rewards,Free
+875,41,20000,Utility,Premium,Free
+876,26,20000,Health,Lounge,Mid (1.5-5K)
+877,47,60000,Travel,Cashback,Low (<1500)
+878,32,35000,Health,Premium,Low (<1500)
+879,22,20000,Travel,Cashback,Low (<1500)
+880,47,100000,Shopping,Rewards,Mid (1.5-5K)
+881,33,10000,Travel,Premium,Low (<1500)
+882,52,20000,Shopping,Cashback,Premium (5K+)
+883,37,10000,Fuel,Forex,Free
+884,48,5000,Shopping,Cashback,Low (<1500)
+885,39,10000,Shopping,Zero Fee,Mid (1.5-5K)
+886,45,20000,Travel,Rewards,Free
+887,33,20000,Shopping,Forex,Mid (1.5-5K)
+888,42,20000,Shopping,Rewards,Premium (5K+)
+889,46,20000,Shopping,Zero Fee,Low (<1500)
+890,35,35000,Food,Cashback,Low (<1500)
+891,33,20000,Health,Cashback,Free
+892,49,10000,Shopping,Cashback,Free
+893,31,10000,Travel,Lounge,Mid (1.5-5K)
+894,45,35000,Shopping,Zero Fee,Free
+895,52,20000,Food,Lounge,Low (<1500)
+896,54,35000,Fuel,Zero Fee,Mid (1.5-5K)
+897,53,60000,Travel,Cashback,Low (<1500)
+898,36,60000,Shopping,Rewards,Low (<1500)
+899,28,35000,Utility,Premium,Premium (5K+)

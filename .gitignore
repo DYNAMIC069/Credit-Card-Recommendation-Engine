@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Models / Large Files
+models/*.pkl
+models/*.joblib
+models/*.h5
+
+# Data files (optional - uncomment if you don’t want to push data)
+# data/*.csv
+
+# Logs & reports
+*.log
+*.json
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Environment variables
+.env
+
+# Build / cache
+*.cache
